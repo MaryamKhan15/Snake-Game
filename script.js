@@ -21,6 +21,10 @@ const gameHomeBtn = document.getElementById('gameHomeBtn');
 const gameOverHomeBtn = document.getElementById('gameOverHomeBtn');
 const restartBtn = document.getElementById('restartBtn');
 const levelBtns = document.querySelectorAll('.level-btn');
+const pauseBtn = document.getElementById('pauseBtn');
+const resumeBtn = document.getElementById('resumeBtn');
+const endGameBtn = document.getElementById('endGameBtn');
+const pauseOverlay = document.getElementById('pauseOverlay');
 
 // Mobile Controls
 const upBtn = document.getElementById('upBtn');
@@ -41,6 +45,7 @@ let selectedStartingLevel = 1;
 let gameLoopId;
 let gameSpeed = 150;
 let isPlaying = false;
+let isPaused = false;
 let obstacles = [];
 let highScore = 0;
 
@@ -93,7 +98,9 @@ function startGame(startingLevel) {
     spawnFood();
     
     isPlaying = true;
+    isPaused = false;
     gameOverOverlay.classList.remove('active');
+    pauseOverlay.classList.remove('active');
     
     showScreen('gameScreen');
     gameLoop();
@@ -213,7 +220,7 @@ function gameOver() {
 }
 
 function gameLoop() {
-    if (!isPlaying) return;
+    if (!isPlaying || isPaused) return;
     move();
     if (checkCollision()) {
         gameOver();
@@ -225,7 +232,7 @@ function gameLoop() {
 
 // Control Logic
 function setDirection(newDx, newDy) {
-    if (!isPlaying) return;
+    if (!isPlaying || isPaused) return;
     if (newDx !== 0 && dx === 0) { dx = newDx; dy = 0; }
     if (newDy !== 0 && dy === 0) { dx = 0; dy = newDy; }
 }
@@ -279,6 +286,28 @@ exitBtn.addEventListener('click', () => {
 });
 
 restartBtn.addEventListener('click', () => startGame(selectedStartingLevel));
+
+pauseBtn.addEventListener('click', () => {
+    if (isPlaying && !isPaused) {
+        isPaused = true;
+        clearTimeout(gameLoopId);
+        pauseOverlay.classList.add('active');
+    }
+});
+
+resumeBtn.addEventListener('click', () => {
+    if (isPlaying && isPaused) {
+        isPaused = false;
+        pauseOverlay.classList.remove('active');
+        gameLoop();
+    }
+});
+
+endGameBtn.addEventListener('click', () => {
+    isPaused = false;
+    pauseOverlay.classList.remove('active');
+    gameOver(); // Show game over screen when ended manually
+});
 
 // Run init
 init();

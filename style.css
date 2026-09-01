@@ -227,6 +227,11 @@ body {
     font-size: 1.5rem;
 }
 
+.header-actions {
+    display: flex;
+    gap: 10px;
+}
+
 .canvas-container {
     width: 100%;
     display: flex;

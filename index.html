@@ -54,7 +54,10 @@
                     <div class="stat-box">SCORE: <span id="score" class="score-yellow">0</span></div>
                     <div class="stat-box">LEVEL: <span id="level" class="score-yellow">1</span></div>
                 </div>
-                <button id="gameHomeBtn" class="action-btn small">HOME</button>
+                <div class="header-actions">
+                    <button id="pauseBtn" class="action-btn small">⏸️</button>
+                    <button id="gameHomeBtn" class="action-btn small">HOME</button>
+                </div>
             </header>
 
             <div class="canvas-container">
@@ -66,6 +69,12 @@
                         <p>SCORE: <span id="finalScore" class="score-yellow">0</span></p>
                         <button id="restartBtn" class="play-btn small">AGAIN</button>
                         <button id="gameOverHomeBtn" class="action-btn mt-1">HOME</button>
+                    </div>
+
+                    <div id="pauseOverlay" class="overlay">
+                        <h2 class="menu-title">PAUSED</h2>
+                        <button id="resumeBtn" class="play-btn small">RESUME</button>
+                        <button id="endGameBtn" class="action-btn mt-1">END GAME</button>
                     </div>
                 </div>
             </div>
