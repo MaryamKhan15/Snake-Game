@@ -1,7 +1,9 @@
-Snake Pro (Neon UI)
+**Snake Pro (Neon UI)**
+
 A modern, responsive, and beautiful Snake Game built with HTML, CSS, and JavaScript. This project gives a classic retro game a complete makeover with a vibrant neon UI/UX, resembling a native mobile app.
 
 🚀 Features
+
 Neon App Interface: A stylish menu with smooth gradients, glowing text, and custom fonts.
 3 Unique Levels:
 Level 1 (Classic): Open borders, normal speed.
@@ -14,6 +16,7 @@ Pause & End Game: Interactive header buttons to pause the game or end the curren
 High Score Tracking: Saves your highest score locally in the browser (localStorage).
 
 🎮 How to Play
+
 Open index.html in any modern web browser.
 Click PLAY from the neon main menu.
 Select your desired Level (1, 2, or 3).
@@ -24,6 +27,7 @@ Eat the food to grow the snake and score points. Avoid hitting the snake's own t
 Click the ⏸️ button to pause, or the HOME button to return to the main menu.
 
 🛠️ Technologies Used
+
 HTML5: For the game structure and Canvas API.
 CSS3: For the neon styling, flexbox layouts, media queries, and responsive design.
 JavaScript (ES6): For the core game logic, collision detection, and DOM manipulation.
