@@ -6,20 +6,26 @@
     -webkit-tap-highlight-color: transparent;
 }
 
-body {
+html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    position: fixed; /* Prevents scroll bounce on iOS */
+    touch-action: none; /* Prevents swipe to refresh or pan */
     background-color: #111;
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
     color: white;
 }
 
 .app-container {
     width: 100%;
     max-width: 400px; /* Mobile width constraint */
-    height: 100vh;
-    max-height: 800px; /* Mobile height constraint */
+    height: 100%; /* Fills parent height exactly without scrolling */
+    max-height: 100dvh; /* Use dynamic viewport height if supported */
     background: linear-gradient(to bottom, #1a0b2e, #0a0410);
     position: relative;
     overflow: hidden;
