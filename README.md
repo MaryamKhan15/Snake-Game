@@ -52,6 +52,7 @@ JavaScript (ES6): For the core game logic, collision detection, and DOM manipula
 Google Fonts: Custom "Teko" font for the stylized gaming typography.
 
 👨‍💻 **Author**
+
 Maryam Khan
 
 GitHub: https://github.com/MaryamKhan15
